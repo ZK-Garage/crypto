@@ -9,7 +9,7 @@ PLONK is however the only generic implementation which allows any curve implemen
 
 ## State of the art
 
-The AZTEC team developed PLONK in 2020. It uses the KZG's pairing-based polynomial commitment scheme and this allows it to be universal, i.e., the same KZG commitment setup parameters an be used for zkSNARK proofs of circuits up to a certain size. 
+The AZTEC team developed PLONK in 2020. It uses the KZG's pairing-based polynomial commitment scheme and this allows it to be universal, i.e., the same KZG commitment setup parameters can be used for zkSNARK proofs of circuits up to a certain size. 
 Since then, PLONK has become very popular and lots of projects like Matter Labs, Zcash's Halo 2, Mina, Mir and others started using it and developed their own variations. 
 
 Both Mir and Zcash use PLONK combined with [Halo’s polynomial commitment scheme](https://eprint.iacr.org/2019/1021.pdf) for their libraries [Plonky](https://github.com/mir-protocol/plonky) and [Halo2](https://github.com/zcash/halo2). Halo based schemes do recursive proofs without pairings using elliptic curves that are not pairing friendly and can run without the need for trusted setups. In a recursive proof, the verifier is coded inside the circuit which allows us to verify a proof provided as part of the witness inside of another proof. In this way the verifier effectively checks many proofs, even though it only verifies the outermost proof.
